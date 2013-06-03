@@ -9,6 +9,7 @@ keywords:
 packages :
   - php
 script : |
+  sudo apt-get update
   sudo chef-solo -c $WERCKER_SOURCE_DIR/solo.rb -j $WERCKER_SOURCE_DIR/solo.json -l debug
 
 box-detect:
