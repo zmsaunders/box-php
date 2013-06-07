@@ -19,6 +19,7 @@ script : |
   cd 
   curl -sS https://getcomposer.org/installer | php
   sudo mv composer.phar /usr/local/bin/composer
+  mkdir -p .composer
   sudo chown -R ubuntu .composer
   
   mkdir phpunit
