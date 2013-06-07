@@ -1,5 +1,5 @@
 name: php
-version: 0.0.3
+version: 0.0.4
 inherits: wercker/ubuntu12.04-webessentials@0.0.3
 type : main
 platform : ubuntu@12.04
@@ -7,10 +7,30 @@ description : php
 keywords:
   - php
 packages :
-  - php
+  - php@5.4
 script : |
   sudo apt-get update
   sudo chef-solo -c $WERCKER_SOURCE_DIR/solo.rb -j $WERCKER_SOURCE_DIR/solo.json -l debug
+  sudo add-apt-repository ppa:ondrej/php5 -y
+  sudo apt-get update
+  sudo apt-get upgrade
+  sudo apt-get dist-upgrade
+  sudo apt-get install php5-sqlite  
+  cd 
+  curl -sS https://getcomposer.org/installer | php
+  sudo mv composer.phar /usr/local/bin/composer
+  
+  mkdir phpunit
+  cd phpunit
+  echo '{  "require": { "phpunit/phpunit": "*"    },    "config": {        "bin-dir": "/usr/local/bin/"    }}' > composer.json
+  sudo composer install
+  cd
+  wget http://xdebug.org/files/xdebug-2.2.3.tgz
+  tar xfz xdebug-2.2.3.tgz
+  cd xdebug-2.2.3
+  phpize
+  ./configure --enable-xdebug
+  make
 
 box-detect:
   priority : 1200
