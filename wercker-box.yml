@@ -1,5 +1,5 @@
 name: php
-version: 0.0.5
+version: 0.0.6
 inherits: wercker/ubuntu12.04-webessentials@0.0.3
 type : main
 platform : ubuntu@12.04
@@ -15,7 +15,8 @@ script : |
   sudo apt-get update
   sudo apt-get upgrade
   sudo apt-get dist-upgrade
-  sudo apt-get install php5-sqlite  
+  sudo apt-get install php5-sqlite
+  sudo apt-get install php5-mysql
   cd 
   curl -sS https://getcomposer.org/installer | php
   sudo mv composer.phar /usr/local/bin/composer
