@@ -1,4 +1,4 @@
 site :opscode
 
 cookbook 'apt'
-cookbook 'php'
+cookbook 'php', '1.2.0'
