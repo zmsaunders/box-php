@@ -18,7 +18,6 @@ script : |
   sudo apt-get install php5-sqlite
   sudo apt-get install php5-mysql
   sudo apt-get install php5-curl
-  sudo apt-get install php5-exactimage
   sudo apt-get install php5-imagick
   sudo apt-get install php5-json
   sudo apt-get install php5-memcache
