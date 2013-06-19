@@ -1,5 +1,5 @@
 name: php
-version: 0.0.8
+version: 0.0.9
 inherits: wercker/ubuntu12.04-webessentials@0.0.3
 type : main
 platform : ubuntu@12.04
@@ -32,8 +32,10 @@ script : |
     
   mkdir phpunit
   cd phpunit
-  echo '{  "require": { "phpunit/phpunit": "*"    },    "config": {        "bin-dir": "/usr/local/bin/"    }}' > composer.json
-  sudo composer install
+  wget http://pear.phpunit.de/get/phpunit.phar
+  sudo mv phpunit.phar /usr/local/bin/phpunit
+  chmod +x /usr/local/bin/phpunit
+  
   cd
   wget http://xdebug.org/files/xdebug-2.2.3.tgz
   tar xfz xdebug-2.2.3.tgz
