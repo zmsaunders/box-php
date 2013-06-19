@@ -1,5 +1,5 @@
 name: php
-version: 0.0.7
+version: 0.0.8
 inherits: wercker/ubuntu12.04-webessentials@0.0.3
 type : main
 platform : ubuntu@12.04
@@ -29,8 +29,7 @@ script : |
   curl -sS https://getcomposer.org/installer | php
   sudo mv composer.phar /usr/local/bin/composer
   mkdir -p .composer
-  sudo chown -R ubuntu .composer
-  
+    
   mkdir phpunit
   cd phpunit
   echo '{  "require": { "phpunit/phpunit": "*"    },    "config": {        "bin-dir": "/usr/local/bin/"    }}' > composer.json
@@ -42,6 +41,7 @@ script : |
   phpize
   ./configure --enable-xdebug
   make
+  sudo chown -R ubuntu $HOME
 
 box-detect:
   priority : 1200
