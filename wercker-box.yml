@@ -25,7 +25,7 @@ script : |
   sudo apt-get install bison
 
   # Install php-build
-  git clone git://github.com/CHH/php-build
+  git clone https://github.com/CHH/php-build.git
   sudo ./php-build/install.sh
   rm -rf ./php-build
   sudo chown -R ubuntu $HOME
@@ -35,7 +35,7 @@ script : |
   php-build --version
 
   # Intall php-env
-  git clone git@github.com:CHH/phpenv.git
+  git clone https://github.com/CHH/phpenv.git
   sudo ./phpenv/bin/phpenv-install.sh
   echo 'export PATH="/home/ubuntu/.phpenv/bin:$PATH"' >> .bashrc
   echo 'eval "$(phpenv init -)"' >> .bashrc
