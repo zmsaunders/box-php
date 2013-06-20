@@ -20,6 +20,7 @@ script : |
 
   # Needed to build PHP with php-build
   sudo apt-get build-dep php5-cli
+  sudo apt-get install libreadline-dev
   sudo apt-get install re2c
   sudo apt-get install flex
   sudo apt-get install bison
