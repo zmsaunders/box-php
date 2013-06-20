@@ -29,6 +29,7 @@ script : |
   sudo ./php-build/install.sh
   rm -rf ./php-build
   sudo chown -R ubuntu $HOME
+  sudo chown -R ubuntu /usr/local/share/php-build
 
   # Validate php-build
   php-build --version
