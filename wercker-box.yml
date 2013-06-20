@@ -26,7 +26,7 @@ script : |
   sudo apt-get install bison
 
   # Install php-build
-  git clone https://github.com/CHH/php-build.git
+  git clone https://github.com/pjvds/php-build.git
   sudo ./php-build/install.sh
   rm -rf ./php-build
   sudo chown -R ubuntu $HOME
@@ -48,9 +48,9 @@ script : |
   phpenv --version
 
   # Build PHP versions
-  php-build -i development 5.3.26 $HOME/.phpenv/versions/5.3
-  php-build -i development 5.4.16 $HOME/.phpenv/versions/5.4
-  php-build -i development 5.5.0RC3 $HOME/.phpenv/versions/5.5
+  php-build -i development 5.3.26 $HOME/.phpenv/versions/5.3 --verbose
+  php-build -i development 5.4.16 $HOME/.phpenv/versions/5.4 --verbose
+  php-build -i development 5.5.0RC3 $HOME/.phpenv/versions/5.5 --verbose
 
 box-detect:
   priority : 1200
