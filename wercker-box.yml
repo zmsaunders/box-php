@@ -1,5 +1,5 @@
 name: php
-version: 0.1.0
+version: 0.2.1
 inherits: wercker/ubuntu12.04-webessentials@0.0.3
 type : main
 platform : ubuntu@12.04
@@ -7,40 +7,46 @@ description : php
 keywords:
   - php
 packages :
+  - php@5.3
   - php@5.4
+  - php@5.5
 script : |
+  # Start with a blank ~/.bashrc file
+  truncate -s0 .bashrc
+
   sudo apt-get update
-  sudo add-apt-repository ppa:ondrej/php5 -y
-  sudo apt-get update
-  sudo apt-get upgrade
-  sudo apt-get dist-upgrade
-  sudo apt-get install php5-sqlite -y
-  sudo apt-get install php5-mysql -y
-  sudo apt-get install php5-curl -y
-  sudo apt-get install php5-imagick -y
-  sudo apt-get install php5-json -y
-  sudo apt-get install php5-memcache -y
-  sudo apt-get install php5-memcached -y
-  sudo apt-get install php5-odbc -y
-  sudo apt-get install php5-pgsql -y
-  sudo apt-get install php5-xdebug -y
 
-  cd
-  curl -sS https://getcomposer.org/installer | php
-  sudo mv composer.phar /usr/local/bin/composer
-  mkdir -p .composer
+  # Needed to build PHP with php-build
+  sudo apt-get build-dep php5-cli
+  sudo apt-get re2c
+  sudo apt-get flex
+  sudo apt-get bison
 
-  sudo pear channel-discover "pear.phpunit.de"
-  sudo pear install "phpunit/PHPUnit"
-
-  cd
-  wget http://xdebug.org/files/xdebug-2.2.3.tgz
-  tar xfz xdebug-2.2.3.tgz
-  cd xdebug-2.2.3
-  phpize
-  ./configure --enable-xdebug
-  make
+  # Install php-build
+  git clone git://github.com/CHH/php-build
+  sudo ./php-build/install.sh
+  rm -rf ./php-build
   sudo chown -R ubuntu $HOME
+
+  # Validate php-build
+  php-build --version
+
+  # Intall php-env
+  git clone git@github.com:CHH/phpenv.git
+  sudo ./phpenv/bin/phpenv-install.sh
+  echo 'export PATH="/home/ubuntu/.phpenv/bin:$PATH"' >> .bashrc
+  echo 'eval "$(phpenv init -)"' >> .bashrc
+  rm -rf ./phpenv
+  sudo chown -R ubuntu $HOME
+  source .bashrc
+
+  # Validate phpenv
+  phpenv --version
+
+  # Build PHP versions
+  php-build -i development 5.3.26 $HOME/.phpenv/versions/5.3
+  php-build -i development 5.4.16 $HOME/.phpenv/versions/5.4
+  php-build -i development 5.5.0RC3 $HOME/.phpenv/versions/5.5
 
 box-detect:
   priority : 1200
