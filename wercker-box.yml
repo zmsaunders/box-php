@@ -14,6 +14,8 @@ script : |
   # Start with a blank ~/.bashrc file
   truncate -s0 .bashrc
 
+  # Add repository that contains php packages
+  sudo add-apt-repository ppa:ondrej/php5 -y
   sudo apt-get update
 
   # Needed to build PHP with php-build
