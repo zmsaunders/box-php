@@ -20,9 +20,9 @@ script : |
 
   # Needed to build PHP with php-build
   sudo apt-get build-dep php5-cli
-  sudo apt-get re2c
-  sudo apt-get flex
-  sudo apt-get bison
+  sudo apt-get install re2c
+  sudo apt-get install flex
+  sudo apt-get install bison
 
   # Install php-build
   git clone git://github.com/CHH/php-build
