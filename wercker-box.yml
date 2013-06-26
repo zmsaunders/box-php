@@ -51,8 +51,9 @@ script : |
 
   # Build PHP versions
   #php-build -i development --pear 5.3.26 $HOME/.phpenv/versions/5.3 --verbose
-  php-build -i development --pear 5.4.16 $HOME/.phpenv/versions/5.4 --verbose
-  php-build -i development --pear 5.5.0RC3 $HOME/.phpenv/versions/5.5 --verbose
+  #php-build -i development --pear 5.4.16 $HOME/.phpenv/versions/5.4 --verbose
+  #php-build -i development --pear 5.5.0RC3 $HOME/.phpenv/versions/5.5 --verbose
+  ./php-build.sh "5.3.26" "5.3"
 
   # Install composer
   curl -sS https://getcomposer.org/installer | php
