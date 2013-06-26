@@ -13,6 +13,7 @@ packages :
 script : |
   # Start with a blank ~/.bashrc file
   truncate -s0 .bashrc
+  echo 'export PATH="/usr/local/bin:$PATH"' > .bashrc
 
   # Add repository that contains php packages
   sudo add-apt-repository ppa:ondrej/php5 -y
@@ -50,7 +51,21 @@ script : |
   # Build PHP versions
   #php-build -i development --pear 5.3.26 $HOME/.phpenv/versions/5.3 --verbose
   php-build -i development --pear 5.4.16 $HOME/.phpenv/versions/5.4 --verbose
-  #php-build -i development --pear 5.5.0RC3 $HOME/.phpenv/versions/5.5 --verbose
+  php-build -i development --pear 5.5.0RC3 $HOME/.phpenv/versions/5.5 --verbose
+
+  # Install composer
+  curl -sS https://getcomposer.org/installer | php
+  mv composer.phar /usr/local/bin/composer
+
+  # Install PHPUnit
+  wget http://pear.phpunit.de/get/phpunit.phar
+  chmod +x phpunit.phar
+  mv phpunit.phar /usr/local/bin/phpunit
+
+  # Install atoum
+  wget http://downloads.atoum.org/nightly/mageekguy.atoum.phar
+  chmod +x mageekguy.atoum.phar
+  mv mageekguy.atoum.phar /usr/local/bin/atoum
 
   # Switch to php 5.4
   phpenv rehash
@@ -63,5 +78,3 @@ box-detect:
   detect:
     - files:
       - composer.json
-
-
