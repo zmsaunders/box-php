@@ -5,7 +5,7 @@ php_package_filename="php$php_version.tar.gz"
 php_package_url="https://s3.amazonaws.com/box-assets/php/$php_package_filename"
 php_version_dir="$PHP_BUILD_VERSIONS_DIR/$php_version_alias"
 
-$status_code=$(curl -o /dev/null --silent --head --write-out '%{http_code}' "$php_package_url")
+status_code=$(curl -o /dev/null --silent --head --write-out '%{http_code}' "$php_package_url")
 
 if [ "$status_code" -eq "200" ]; then
   curl -O "$php_package_url"
