@@ -73,9 +73,9 @@ script : |
   phpenv global 5.4
   php --version
 
-box-detect:
-  priority : 1200
-  version :
-  detect:
-    - files:
-      - composer.json
+# box-detect:
+#   priority : 1200
+#   version :
+#   detect:
+#     - files:
+#       - composer.json
