@@ -13,7 +13,7 @@ if [ "$status_code" -eq "200" ]; then
 
   tar -zxvf "$php_package_filename" -C "$php_version_dir"
 else
-  php-build -i development --pear "$php_version" "$php_version_dir"
+  php-build -i development --pear "$php_version" "$php_version_dir" --verbose
 
   tar -zcvf "$php_package_filename" "$php_version_dir"
 
