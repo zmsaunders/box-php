@@ -1,5 +1,5 @@
-$php_version="$1"         # The full PHP version, like 5.4.15
-$php_version_alias="$2"   # The short alias, like 5.4
+php_version="$1"         # The full PHP version, like 5.4.15
+php_version_alias="$2"   # The short alias, like 5.4
 
 php_package_filename="php$php_version.tar.gz"
 php_package_url="https://s3.amazonaws.com/box-assets/php/$php_package_filename"
