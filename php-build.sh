@@ -23,5 +23,5 @@ else
   $AWS_ACCESS_KEY_ID
   $AWS_SECRET_KEY
 
-  ./s3-put.sh -k "$AWS_ACCESS_KEY_ID" -s "$secretKeyFile" -c "application/x-tgz" -T "$php_package_filename" "/box-assets/php/$php_package_filename&x-amz-acl=public-read"
+  ./s3-put -k "$AWS_ACCESS_KEY_ID" -s "$secretKeyFile" -c "application/x-tgz" -T "$php_package_filename" "/box-assets/php/$php_package_filename&x-amz-acl=public-read"
 fi
