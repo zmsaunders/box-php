@@ -61,6 +61,11 @@ script : |
   ./php-build.sh "5.4.16" "5.4"
   ./php-build.sh "5.5.0" "5.5"
 
+  # Activate php 5.4
+  phpenv rehash
+  phpenv global 5.4
+  php --version
+
   # Install composer
   curl -sS https://getcomposer.org/installer | php
   mv composer.phar /usr/local/bin/composer
@@ -74,11 +79,6 @@ script : |
   wget http://downloads.atoum.org/nightly/mageekguy.atoum.phar
   chmod +x mageekguy.atoum.phar
   mv mageekguy.atoum.phar /usr/local/bin/atoum
-
-  # Switch to php 5.4
-  phpenv rehash
-  phpenv global 5.4
-  php --version
 
 # box-detect:
 #   priority : 1200
