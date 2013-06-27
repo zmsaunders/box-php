@@ -1,5 +1,5 @@
 name: php
-version: 0.2.4
+version: 0.2.5
 inherits: wercker/ubuntu12.04-webessentials@0.0.3
 type : main
 platform : ubuntu@12.04
@@ -16,8 +16,8 @@ script : |
   sudo chmod +x ./php-build.sh
 
   # Start with a blank ~/.bashrc file
-  truncate -s0 .bashrc
-  echo 'export PATH="/usr/local/bin:$PATH"' > .bashrc
+  truncate -s0 $HOME/.bashrc
+  echo 'export PATH="/usr/local/bin:$PATH"' > $HOME/.bashrc
 
   # Add repository that contains php packages
   sudo add-apt-repository ppa:ondrej/php5 -y
@@ -44,8 +44,8 @@ script : |
   # Intall php-env
   git clone https://github.com/CHH/phpenv.git
   sudo ./phpenv/bin/phpenv-install.sh
-  echo 'export PATH="/home/ubuntu/.phpenv/bin:$PATH"' >> .bashrc
-  echo 'eval "$(phpenv init -)"' >> .bashrc
+  echo 'export PATH="/home/ubuntu/.phpenv/bin:$PATH"' >> $HOME/.bashrc
+  echo 'eval "$(phpenv init -)"' >> $HOME/.bashrc
   rm -rf ./phpenv
   sudo chown -R ubuntu $HOME
   source .bashrc
