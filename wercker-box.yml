@@ -69,12 +69,13 @@ script : |
 
   # Install composer
   curl -sS https://getcomposer.org/installer | php
-  mv composer.phar /usr/local/bin/composer
+  sudo mv composer.phar /usr/local/bin/composer
+  sudo chmod +x /usr/local/bin/composer
 
   # Install PHPUnit
   wget http://pear.phpunit.de/get/phpunit.phar
-  chmod +x phpunit.phar
-  mv phpunit.phar /usr/local/bin/phpunit
+  sudo mv phpunit.phar /usr/local/bin/phpunit
+  sudo chmod +x /usr/local/bin/phpunit
 
   # Install atoum
   wget http://downloads.atoum.org/nightly/mageekguy.atoum.phar
