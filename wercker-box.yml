@@ -54,9 +54,6 @@ script : |
   phpenv --version
 
   # Build PHP versions
-  #php-build -i development --pear 5.3.26 $HOME/.phpenv/versions/5.3 --verbose
-  #php-build -i development --pear 5.4.16 $HOME/.phpenv/versions/5.4 --verbose
-  #php-build -i development --pear 5.5.0RC3 $HOME/.phpenv/versions/5.5 --verbose
   ./php-build.sh "5.3.26" "5.3"
   ./php-build.sh "5.4.16" "5.4"
   ./php-build.sh "5.5.0" "5.5"
@@ -80,7 +77,8 @@ script : |
   # Install atoum
   wget http://downloads.atoum.org/nightly/mageekguy.atoum.phar
   chmod +x mageekguy.atoum.phar
-  mv mageekguy.atoum.phar /usr/local/bin/atoum
+  sudo mv mageekguy.atoum.phar /usr/local/bin/atoum
+  sudo chmod +x /usr/local/bin/atoum
 
 # box-detect:
 #   priority : 1200
