@@ -48,7 +48,7 @@ script : |
   echo 'eval "$(phpenv init -)"' >> $HOME/.bashrc
   rm -rf ./phpenv
   sudo chown -R ubuntu $HOME
-  source .bashrc
+  source $HOME/.bashrc
 
   # Validate phpenv
   phpenv --version
