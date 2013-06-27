@@ -63,6 +63,7 @@ script : |
 
   # Activate php 5.4
   phpenv rehash
+  phpenv versions
   phpenv global 5.4
   php --version
 
