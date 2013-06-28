@@ -53,9 +53,10 @@ script : |
   phpenv --version
 
   # Build PHP versions
-  ./php-build.sh "5.3.26" "5.3"
-  ./php-build.sh "5.4.16" "5.4"
-  ./php-build.sh "5.5.0" "5.5"
+  php-build -i development --pear 5.4.16 $HOME/.phpenv/versions/5.4 --verbose
+  # ./php-build.sh "5.3.26" "5.3"
+  # ./php-build.sh "5.4.16" "5.4"
+  # ./php-build.sh "5.5.0" "5.5"
 
   # Activate php 5.4
   phpenv rehash
