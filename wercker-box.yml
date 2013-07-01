@@ -1,5 +1,5 @@
 name: php
-version: 0.8.2
+version: 0.9.0
 inherits: wercker/ubuntu12.04-webessentials@0.0.3
 type : main
 platform : ubuntu@12.04
@@ -84,9 +84,103 @@ script : |
   sudo mv mageekguy.atoum.phar /usr/local/bin/atoum
   sudo chmod +x /usr/local/bin/atoum
 
-# box-detect:
-#   priority : 1200
-#   version :
-#   detect:
-#     - files:
-#       - composer.json
+
+default-build:
+  php-composer-phpunit:
+    priority: 150
+    detect:
+      - files:
+          - composer.json
+          - phpunit.xml
+    text-to-append: |
+      build:
+          # The steps that will be executed on build
+          steps:
+            # A custom script step, name value is used in the UI
+            # and the code value contains the command that get executed
+            - script:
+                name: install dependencies
+                code: composer install --no-interaction
+            - script:
+                name: run unit tests
+                code: phpunit
+            # Add more steps here:
+            #- script:
+            #    name: run unit tests
+            #    code: phpunit
+
+  php-phpunit:
+    priority: 125
+    detect:
+      - files:
+        - phpunit.xml
+    text-to-append: |
+      build:
+          # The steps that will be executed on build
+          steps:
+            # A custom script step, name value is used in the UI
+            # and the code value contains the command that get executed
+            #- script:
+            #    name: install dependencies
+            #    code: composer install --no-interaction
+            - script:
+                name: run unit tests
+                code: phpunit
+            # Add more steps here:
+            #- script:
+            #    name: run unit tests
+            #    code: phpunit
+  php-composer:
+    priority: 100
+    detect:
+      - files:
+          - composer.json
+    text-to-append: |
+      build:
+          # The steps that will be executed on build
+          steps:
+            # A custom script step, name value is used in the UI
+            # and the code value contains the command that get executed
+            - script:
+                name: install dependencies
+                code: composer install --no-interaction
+            - script:
+                name: echo php information
+                code: |
+                  echo "php version $(php --version) running"
+                  echo "from location $(which php)"
+            # Add more steps here:
+            #- script:
+            #    name: run unit tests
+            #    code: phpunit
+  php:
+    priority : 50
+    detect:
+      - default: true
+    text-to-append: |
+      # Build definition
+      build:
+        # The steps that will be executed on build
+        steps:
+          # A custom script step, name value is used in the UI
+          # and the code value contains the command that get executed
+          - script:
+              name: echo php information
+              code: |
+                echo "php version $(php --version) running"
+                echo "from location $(which php)"
+          # Add more steps here:
+          #- script:
+          #    name: run unit tests
+          #    code: phpunit
+
+box-detect:
+  priority: 1200
+  version:
+  detect:
+    - files:
+      - composer.json
+    - files:
+      - phpunit.xml
+    - files:
+      - index.php
