@@ -4,6 +4,7 @@ php
 
 # What's new
 
+- Install phpunit from new phar location
 - Adds config-add extension
 - Adds config-rm extension
 
@@ -34,6 +35,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## 0.9.3
 
+- Install phpunit from new phar location
 - Adds config-add extension
 - Adds config-rm extension
 
