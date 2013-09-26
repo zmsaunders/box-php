@@ -45,6 +45,11 @@ script : |
   sudo ./phpenv/bin/phpenv-install.sh
   echo 'export PATH="/home/ubuntu/.phpenv/bin:$PATH"' >> $HOME/.bash_profile
   echo 'eval "$(phpenv init -)"' >> $HOME/.bash_profile
+
+  # Install extensions
+  cp ./phpenv/extensions/rbenv-config-add /home/ubuntu/.phpenv/libexec
+  cp ./phpenv/extensions/rbenv-config-rm /home/ubuntu/.phpenv/libexec
+  
   rm -rf ./phpenv
   sudo chown -R ubuntu $HOME
   source $HOME/.bash_profile
