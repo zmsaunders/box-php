@@ -79,7 +79,7 @@ script : |
   sudo chmod +x /usr/local/bin/composer
 
   # Install PHPUnit
-  wget http://pear.phpunit.de/get/phpunit.phar
+  wget https://phar.phpunit.de/phpunit.phar
   sudo mv phpunit.phar /usr/local/bin/phpunit
   sudo chmod +x /usr/local/bin/phpunit
 
