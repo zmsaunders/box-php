@@ -4,6 +4,7 @@ php
 
 # What's new
 
+- new version uses updated apt list
 - Install phpunit from new phar location
 - Adds config-add extension
 - Adds config-rm extension
@@ -32,6 +33,10 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 # Changelog
+
+## 0.9.4
+
+- Update [`web-essentials`](https://app.wercker.com/#applications/51ab0c42df8960ba45003fd9/tab/details) to 0.0.12
 
 ## 0.9.3
 
