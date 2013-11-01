@@ -4,6 +4,7 @@ php
 
 # What's new
 
+- `dbunit` is now installed
 - new version uses updated apt list
 - Install phpunit from new phar location
 - Adds config-add extension
@@ -33,6 +34,10 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 # Changelog
+
+## 0.9.5
+
+- Adds `dbunit`
 
 ## 0.9.4
 
