@@ -4,11 +4,7 @@ php
 
 # What's new
 
-- `dbunit` is now installed
-- new version uses updated apt list
-- Install phpunit from new phar location
-- Adds config-add extension
-- Adds config-rm extension
+- Updated composer
 
 # License
 
@@ -37,7 +33,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## 0.9.5
 
-- Adds `dbunit`
+- Updated composer
 
 ## 0.9.4
 
