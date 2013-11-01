@@ -83,10 +83,6 @@ script : |
   sudo mv phpunit.phar /usr/local/bin/phpunit
   sudo chmod +x /usr/local/bin/phpunit
   
-  # Install dbunit
-  sudo composer install phpunit/DbUnit
-  pear install phpunit/DbUnit
-  
   # Install atoum
   wget http://downloads.atoum.org/nightly/mageekguy.atoum.phar
   chmod +x mageekguy.atoum.phar
