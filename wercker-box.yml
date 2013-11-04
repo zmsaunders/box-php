@@ -62,7 +62,7 @@ script : |
   sed -i  's/128M/8096M/' /home/ubuntu/.phpenv/versions/5.3/etc/php.ini
 
   php-build -i development --pear 5.4.16 $HOME/.phpenv/versions/5.4 --verbose
-  sed -i  's/128M/8096M/' /home/ubuntu/.phpenv/versions/5.4/etc/php.ini
+  sed -i  's/128M/8096M/' /home/ubuntu/.phpenv/versions/.4/etc/php.ini
 
   php-build -i development --pear 5.5.0 $HOME/.phpenv/versions/5.5 --verbose
   sed -i  's/128M/8096M/' /home/ubuntu/.phpenv/versions/5.5/etc/php.ini
@@ -78,10 +78,10 @@ script : |
   sudo mv composer.phar /usr/local/bin/composer
   sudo chmod +x /usr/local/bin/composer
 
-  # Install PHPUnit
-  wget https://phar.phpunit.de/phpunit.phar
-  sudo mv phpunit.phar /usr/local/bin/phpunit
-  sudo chmod +x /usr/local/bin/phpunit
+  # Install DBunit and DBunit
+  sudo pear config-set auto_discover 1
+  sudo pear install phpunit/PHPUnit
+  sudo pear install phpunit/DbUnit
   
   # Install atoum
   wget http://downloads.atoum.org/nightly/mageekguy.atoum.phar
