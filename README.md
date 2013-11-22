@@ -4,6 +4,7 @@ php
 
 # What's new
 
+- Use `--prefer-source` option for `composer` in suggested `wercker.yml`
 - Updated composer
 
 # License
@@ -30,6 +31,11 @@ IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 # Changelog
+
+## 0.9.6
+
+- Use `--prefer-source` option for `composer` in suggested `wercker.yml`
+- Updated composer
 
 ## 0.9.5
 
