@@ -105,7 +105,7 @@ default-build:
             # and the code value contains the command that get executed
             - script:
                 name: install dependencies
-                code: composer install --no-interaction
+                code: composer install --no-interaction --prefer-source
             - script:
                 name: run unit tests
                 code: phpunit
