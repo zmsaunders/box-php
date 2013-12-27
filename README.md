@@ -13,6 +13,10 @@ The MIT License (MIT)
 
 # Changelog
 
+## 0.9.7
+
+- Drop s3 package sync (this is a change in the build process, and doesn't effect the box itself)
+
 ## 0.9.6
 
 - Use `--prefer-source` option for `composer` in suggested `wercker.yml`
