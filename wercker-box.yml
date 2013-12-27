@@ -11,10 +11,6 @@ packages :
   - php@5.4
   - php@5.5
 script : |
-  sudo chmod +x ./s3-put
-  sudo chmod +x ./s3-common-functions
-  sudo chmod +x ./php-build.sh
-
   # Add eports to profile, rc didn't work
   echo 'export PATH="/usr/local/bin:$PATH"' >> $HOME/.bash_profile
 
