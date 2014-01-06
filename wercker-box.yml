@@ -64,10 +64,10 @@ script : |
   sed -i  's/128M/8096M/' /home/ubuntu/.phpenv/versions/5.5/etc/php.ini
 
   # Activate php 5.4
-  phpenv rehash
   phpenv versions
   phpenv global 5.4
   php --version
+  phpenv rehash
 
   # Install composer
   curl -sS https://getcomposer.org/installer | php
