@@ -61,7 +61,7 @@ script : |
   sed -i  's/128M/8096M/' /home/ubuntu/.phpenv/versions/5.4/etc/php.ini
 
   php-build -i development --pear 5.5.7 $HOME/.phpenv/versions/5.5 --verbose
-  sed -i  's/128M/8096M/' /home/ubuntu/.phpenv/versions/5.5.7/etc/php.ini
+  sed -i  's/128M/8096M/' /home/ubuntu/.phpenv/versions/5.5/etc/php.ini
 
   # Activate php 5.4
   phpenv rehash
