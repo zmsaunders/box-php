@@ -4,14 +4,19 @@ php
 
 # What's new
 
-- Use `--prefer-source` option for `composer` in suggested `wercker.yml`
-- Updated composer
+- Update PHP 5.3 to 5.3.28
+- Update PHP 5.4 to 5.4.23
+- Update PHP 5.5 to 5.5.7
 
 # License
 
 The MIT License (MIT)
 
 # Changelog
+
+- Update PHP 5.3 to 5.3.28
+- Update PHP 5.4 to 5.4.23
+- Update PHP 5.5 to 5.5.7
 
 ## 0.9.7
 
