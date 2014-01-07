@@ -60,7 +60,13 @@ script : |
   # Setup environment
   phpenv rehash
   phpenv global 5.3
+  phpenv rehash
   prefix=$(phpenv prefix)
+  
+  # list php version environment
+  ls $prefix
+  
+  
 
   # Install composer
   curl -sS https://getcomposer.org/installer | php
