@@ -65,7 +65,10 @@ script : |
   
   # list php version environment
   ls $prefix
+  ls $prefix/pear
   
+  # echo the current path
+  echo $PATH
   
 
   # Install composer
