@@ -72,7 +72,8 @@ script : |
 
   # Download composer
   curl -sS https://getcomposer.org/installer | php
-  composer.phar selfupdate
+  sudo chmod +x ./composer.phar
+  ./composer.phar selfupdate
 
   # Install composer
   sudo cp composer.phar $prefix/bin/composer
