@@ -69,11 +69,13 @@ script : |
   
   # echo the current path
   echo $PATH
-  
+
+  # Download composer
+  curl -sS https://getcomposer.org/installer | php
+  composer.phar selfupdate
 
   # Install composer
-  curl -sS https://getcomposer.org/installer | php
-  sudo mv composer.phar $prefix/bin/composer
+  sudo cp composer.phar $prefix/bin/composer
   sudo chmod +x $prefix/bin/composer
 
   # Install DBunit and DBunit
@@ -98,8 +100,7 @@ script : |
   prefix=$(phpenv prefix)
 
   # Install composer
-  curl -sS https://getcomposer.org/installer | php
-  sudo mv composer.phar $prefix/bin/composer
+  sudo cp composer.phar $prefix/bin/composer
   sudo chmod +x $prefix/bin/composer
 
   # Install DBunit and DBunit
@@ -123,10 +124,10 @@ script : |
   prefix=$(phpenv prefix)
 
   # Install composer
-  curl -sS https://getcomposer.org/installer | php
-  sudo mv composer.phar $prefix/bin/composer
+  composer.phar selfupdate
+  sudo cp composer.phar $prefix/bin/composer
   sudo chmod +x $prefix/bin/composer
-
+  
   # Install DBunit and DBunit
   pear config-set auto_discover 1
   pear channel-discover pear.phpunit.de
