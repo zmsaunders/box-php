@@ -7,6 +7,7 @@ php
 - Update PHP 5.3 to 5.3.28
 - Update PHP 5.4 to 5.4.23
 - Update PHP 5.5 to 5.5.7
+- Composer selfupdate
 
 # License
 
@@ -14,9 +15,12 @@ The MIT License (MIT)
 
 # Changelog
 
+## 0.9.8
+
 - Update PHP 5.3 to 5.3.28
 - Update PHP 5.4 to 5.4.23
 - Update PHP 5.5 to 5.5.7
+- Composer selfupdate
 
 ## 0.9.7
 
