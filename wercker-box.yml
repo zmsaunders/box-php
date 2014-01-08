@@ -125,7 +125,6 @@ script : |
   prefix=$(phpenv prefix)
 
   # Install composer
-  composer.phar selfupdate
   sudo cp composer.phar $prefix/bin/composer
   sudo chmod +x $prefix/bin/composer
   
