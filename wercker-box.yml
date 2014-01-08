@@ -77,9 +77,9 @@ script : |
   sudo chmod +x $prefix/bin/composer
 
   # Install DBunit and DBunit
-  sudo pear config-set auto_discover 1
-  sudo pear install phpunit/PHPUnit
-  sudo pear install phpunit/DbUnit
+  pear config-set auto_discover 1
+  pear install phpunit/PHPUnit
+  pear install phpunit/DbUnit
   
   # Install atoum
   wget http://downloads.atoum.org/nightly/mageekguy.atoum.phar
@@ -102,9 +102,9 @@ script : |
   sudo chmod +x $prefix/bin/composer
 
   # Install DBunit and DBunit
-  sudo pear config-set auto_discover 1
-  sudo pear install phpunit/PHPUnit
-  sudo pear install phpunit/DbUnit
+  pear config-set auto_discover 1
+  pear install phpunit/PHPUnit
+  pear install phpunit/DbUnit
   
   # Install atoum
   wget http://downloads.atoum.org/nightly/mageekguy.atoum.phar
@@ -126,9 +126,9 @@ script : |
   sudo chmod +x $prefix/bin/composer
 
   # Install DBunit and DBunit
-  sudo pear config-set auto_discover 1
-  sudo pear install phpunit/PHPUnit
-  sudo pear install phpunit/DbUnit
+  pear config-set auto_discover 1
+  pear install phpunit/PHPUnit
+  pear install phpunit/DbUnit
   
   # Install atoum
   wget http://downloads.atoum.org/nightly/mageekguy.atoum.phar
