@@ -4,6 +4,7 @@ inherits: wercker/ubuntu12.04-webessentials@1.0.0
 type : main
 platform : ubuntu@12.04
 description : php
+no-response-timeout: 25
 keywords:
   - php
 packages :
