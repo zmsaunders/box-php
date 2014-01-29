@@ -4,16 +4,19 @@ php
 
 # What's new
 
-- Update PHP 5.3 to 5.3.28
-- Update PHP 5.4 to 5.4.23
-- Update PHP 5.5 to 5.5.7
-- Composer selfupdate
+- Update PHP 5.4 to 5.4.24
+- Update PHP 5.5 to 5.5.8
+- Now uses the latest wercker/webessentials
 
 # License
 
 The MIT License (MIT)
 
 # Changelog
+
+## 1.0.0
+- Update PHP 5.4 to 5.4.24
+- Update PHP 5.5 to 5.5.8
 
 ## 0.9.8
 
