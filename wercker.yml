@@ -1,7 +1,1 @@
-box: wercker/nodejs
-no-response-timeout: 25
-build:
-    steps:
-        - validate-wercker-box
-
 

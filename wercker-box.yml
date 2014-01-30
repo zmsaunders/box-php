@@ -3,6 +3,11 @@ version: 1.0.0
 inherits: wercker/ubuntu12.04-webessentials@1.0.0
 type : main
 platform : ubuntu@12.04
+no-response-timeout: 25
+build:
+    steps:
+        - validate-wercker-box
+
 description : php
 keywords:
   - php
