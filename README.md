@@ -4,9 +4,7 @@ php
 
 # What's new
 
-- Update PHP 5.4 to 5.4.24
-- Update PHP 5.5 to 5.5.8
-- Now uses the latest wercker/webessentials
+- Add `.phpenv/shims` to `$PATH`
 
 # License
 
@@ -14,7 +12,12 @@ The MIT License (MIT)
 
 # Changelog
 
+## 1.0.1
+
+- Add `.phpenv/shims` to `$PATH`
+
 ## 1.0.0
+
 - Update PHP 5.4 to 5.4.24
 - Update PHP 5.5 to 5.5.8
 
