@@ -12,7 +12,7 @@ The MIT License (MIT)
 
 # Changelog
 
-## 1.0.1
+## 1.0.2
 
 - Add `.phpenv/shims` to `$PATH`
 
