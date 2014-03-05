@@ -36,6 +36,7 @@ script : |
   rm -rf ./php-build
   sudo chown -R ubuntu $HOME
   sudo chown -R ubuntu /usr/local/share/php-build
+  export PHP_BUILD_CONFIGURE_OPTS="--with-bz2"
   export PHP_BUILD_VERSIONS_DIR="$HOME/.phpenv/versions"
 
   # Validate php-build
