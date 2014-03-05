@@ -1,16 +1,32 @@
 # php box
 
-php
+A wercker box with multiple PHP installation installed.
+
+Installed PHP versions:
+
+- PHP `5.3.28`
+- PHP `5.4.24`
+- PHP `5.5.8`
+
+Installed extensions:
+
+- bz2
 
 # What's new
 
-- Add `.phpenv/shims` to `$PATH`
+- Add bz2 extension to PHP
+- Update `web-essentials` to `1.0.1`
 
 # License
 
 The MIT License (MIT)
 
 # Changelog
+
+## 1.0.3
+
+- Add bz2 extension to PHP
+- Update `web-essentials` to `1.0.1`
 
 ## 1.0.2
 
