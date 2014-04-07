@@ -23,6 +23,10 @@ The MIT License (MIT)
 
 # Changelog
 
+## 1.0.4
+
+- Add intl extension to PHP
+
 ## 1.0.3
 
 - Add bz2 extension to PHP

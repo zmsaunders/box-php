@@ -1,5 +1,5 @@
 name: php
-version: 1.0.3
+version: 1.0.4
 inherits: wercker/ubuntu12.04-webessentials@1.0.1
 type : main
 platform : ubuntu@12.04
@@ -36,8 +36,10 @@ script : |
   rm -rf ./php-build
   sudo chown -R ubuntu $HOME
   sudo chown -R ubuntu /usr/local/share/php-build
-  export PHP_BUILD_CONFIGURE_OPTS="--with-bz2"
+  export PHP_BUILD_CONFIGURE_OPTS="--with-bz2 --enable-intl"
   export PHP_BUILD_VERSIONS_DIR="$HOME/.phpenv/versions"
+  cat /usr/local/share/php-build/default_configure_options
+  echo $LD_LIBRARY_PATH
 
   # Validate php-build
   php-build --version
@@ -60,7 +62,10 @@ script : |
   phpenv --version
 
   # Build PHP versions
+  cp patch-intl-5.3.sh /usr/local/share/php-build/before-install.d/
+  chmod +x /usr/local/share/php-build/before-install.d/patch-intl-5.3.sh
   php-build -i development --pear 5.3.28 $HOME/.phpenv/versions/5.3 --verbose
+  rm /usr/local/share/php-build/before-install.d/patch-intl-5.3.sh
   sed -i  's/128M/8096M/' /home/ubuntu/.phpenv/versions/5.3/etc/php.ini
 
   # Setup environment
