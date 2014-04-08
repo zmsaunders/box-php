@@ -38,8 +38,6 @@ script : |
   sudo chown -R ubuntu /usr/local/share/php-build
   export PHP_BUILD_CONFIGURE_OPTS="--with-bz2 --enable-intl"
   export PHP_BUILD_VERSIONS_DIR="$HOME/.phpenv/versions"
-  cat /usr/local/share/php-build/default_configure_options
-  echo $LD_LIBRARY_PATH
 
   # Validate php-build
   php-build --version
