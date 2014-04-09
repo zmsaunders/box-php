@@ -100,7 +100,6 @@ script : |
   sudo mv mageekguy.atoum.phar $prefix/bin/atoum
   sudo chmod +x $prefix/bin/atoum
   
-
   php-build -i development --pear 5.4.24 $HOME/.phpenv/versions/5.4 --verbose
   sed -i  's/128M/8096M/' /home/ubuntu/.phpenv/versions/5.4/etc/php.ini
 
@@ -148,10 +147,6 @@ script : |
   chmod +x mageekguy.atoum.phar
   sudo mv mageekguy.atoum.phar $prefix/bin/atoum
   sudo chmod +x $prefix/bin/atoum
-
-
-
-
 
 default-build:
   php-composer-phpunit:
