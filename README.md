@@ -11,17 +11,21 @@ Installed PHP versions:
 Installed extensions:
 
 - bz2
+- intl
 
 # What's new
 
-- Add bz2 extension to PHP
-- Update `web-essentials` to `1.0.1`
+- Add intl extension to PHP
 
 # License
 
 The MIT License (MIT)
 
 # Changelog
+
+## 1.0.4
+
+- Add intl extension to PHP
 
 ## 1.0.3
 
