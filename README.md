@@ -5,8 +5,8 @@ A wercker box with multiple PHP installation installed.
 Installed PHP versions:
 
 - PHP `5.3.28`
-- PHP `5.4.24`
-- PHP `5.5.8`
+- PHP `5.4.27`
+- PHP `5.5.11`
 
 Installed extensions:
 
@@ -22,6 +22,14 @@ Installed extensions:
 The MIT License (MIT)
 
 # Changelog
+
+## 1.0.6
+- updated php 5.4 to 5.4.27
+- updated php 5.5 to 5.5.11
+
+## 1.0.5
+
+- updated base box (wercker-essentials). Now with nodejs 10.0.26, optipng 0.7.5 and phantonjs 1.9.7
 
 ## 1.0.4
 

@@ -1,5 +1,5 @@
 name: php
-version: 1.0.5
+version: 1.0.6
 inherits: wercker/ubuntu12.04-webessentials@1.0.2
 type : main
 platform : ubuntu@12.04
@@ -100,7 +100,7 @@ script : |
   sudo mv mageekguy.atoum.phar $prefix/bin/atoum
   sudo chmod +x $prefix/bin/atoum
   
-  php-build -i development --pear 5.4.24 $HOME/.phpenv/versions/5.4 --verbose
+  php-build -i development --pear 5.4.26 $HOME/.phpenv/versions/5.4 --verbose
   sed -i  's/128M/8096M/' /home/ubuntu/.phpenv/versions/5.4/etc/php.ini
 
   # Setup environment
@@ -124,7 +124,7 @@ script : |
   sudo mv mageekguy.atoum.phar $prefix/bin/atoum
   sudo chmod +x $prefix/bin/atoum
 
-  php-build -i development --pear 5.5.8 $HOME/.phpenv/versions/5.5 --verbose
+  php-build -i development --pear 5.5.11 $HOME/.phpenv/versions/5.5 --verbose
   sed -i  's/128M/8096M/' /home/ubuntu/.phpenv/versions/5.5/etc/php.ini
 
   # Setup environment
