@@ -15,7 +15,7 @@ Installed extensions:
 
 # What's new
 
-- Add intl extension to PHP
+- now updated the base box, php box now has node 10.0.26 (and npm 1.4.3), optipng 0.7.5 and postgres-client 9.3
 
 # License
 
