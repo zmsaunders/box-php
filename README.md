@@ -5,7 +5,7 @@ A wercker box with multiple PHP installation installed.
 Installed PHP versions:
 
 - PHP `5.3.28`
-- PHP `5.4.27`
+- PHP `5.4.28`
 - PHP `5.5.11`
 
 Installed extensions:
@@ -22,6 +22,10 @@ Installed extensions:
 The MIT License (MIT)
 
 # Changelog
+
+## 1.0.7
+- use latest wercker-essential box (fix for missing phantomjs)
+- updated php 5.4 to 5.4.28
 
 ## 1.0.6
 - updated php 5.4 to 5.4.27
