@@ -23,6 +23,9 @@ The MIT License (MIT)
 
 # Changelog
 
+## 1.0.7
+- use latest wercker-essential box (fix for missing phantomjs)
+
 ## 1.0.6
 - updated php 5.4 to 5.4.27
 - updated php 5.5 to 5.5.11
