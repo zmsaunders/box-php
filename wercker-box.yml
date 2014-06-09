@@ -1,5 +1,5 @@
 name: php
-version: 1.0.7
+version: 1.0.8
 inherits: wercker/ubuntu12.04-webessentials@1.0.4
 type : main
 platform : ubuntu@12.04
@@ -36,7 +36,7 @@ script : |
   rm -rf ./php-build
   sudo chown -R ubuntu $HOME
   sudo chown -R ubuntu /usr/local/share/php-build
-  export PHP_BUILD_CONFIGURE_OPTS="--with-bz2 --enable-intl"
+  export PHP_BUILD_CONFIGURE_OPTS="--with-bz2 --enable-intl --enable-calendar"
   export PHP_BUILD_VERSIONS_DIR="$HOME/.phpenv/versions"
 
   # Validate php-build
@@ -51,7 +51,7 @@ script : |
   # Install extensions
   sudo cp ./phpenv/extensions/rbenv-config-add /home/ubuntu/.phpenv/libexec
   sudo cp ./phpenv/extensions/rbenv-config-rm /home/ubuntu/.phpenv/libexec
-  
+
   rm -rf ./phpenv
   sudo chown -R ubuntu $HOME
   source $HOME/.bash_profile
@@ -71,11 +71,11 @@ script : |
   phpenv global 5.3
   phpenv rehash
   prefix=$(phpenv prefix)
-  
+
   # list php version environment
   ls $prefix
   ls $prefix/pear
-  
+
   # echo the current path
   echo $PATH
 
@@ -93,13 +93,13 @@ script : |
   pear channel-discover pear.phpunit.de
   pear install pear.phpunit.de/PHPUnit
   pear install pear.phpunit.de/DbUnit
-  
+
   # Install atoum
   wget http://downloads.atoum.org/nightly/mageekguy.atoum.phar
   chmod +x mageekguy.atoum.phar
   sudo mv mageekguy.atoum.phar $prefix/bin/atoum
   sudo chmod +x $prefix/bin/atoum
-  
+
   php-build -i development --pear 5.4.28 $HOME/.phpenv/versions/5.4 --verbose
   sed -i  's/128M/8096M/' /home/ubuntu/.phpenv/versions/5.4/etc/php.ini
 
@@ -117,7 +117,7 @@ script : |
   pear channel-discover pear.phpunit.de
   pear install pear.phpunit.de/PHPUnit
   pear install pear.phpunit.de/DbUnit
-  
+
   # Install atoum
   wget http://downloads.atoum.org/nightly/mageekguy.atoum.phar
   chmod +x mageekguy.atoum.phar
@@ -135,13 +135,13 @@ script : |
   # Install composer
   sudo cp composer.phar $prefix/bin/composer
   sudo chmod +x $prefix/bin/composer
-  
+
   # Install DBunit and DBunit
   pear config-set auto_discover 1
   pear channel-discover pear.phpunit.de
   pear install pear.phpunit.de/PHPUnit
   pear install pear.phpunit.de/DbUnit
-  
+
   # Install atoum
   wget http://downloads.atoum.org/nightly/mageekguy.atoum.phar
   chmod +x mageekguy.atoum.phar
