@@ -12,16 +12,21 @@ Installed extensions:
 
 - bz2
 - intl
+- calendar
 
 # What's new
 
-- now updated the base box, php box now has node 10.0.26 (and npm 1.4.3), optipng 0.7.5 and postgres-client 9.3
+- Add calendar extension to PHP
 
 # License
 
 The MIT License (MIT)
 
 # Changelog
+
+## 1.0.8
+
+- Add calendar extension to PHP
 
 ## 1.0.7
 - use latest wercker-essential box (fix for missing phantomjs)
