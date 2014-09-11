@@ -32,6 +32,8 @@ script : |
   sudo apt-get install bison
   sudo apt-get install nodejs
   
+  # Install Packages for grunt + sass
+  sudo gem install sass
   sudo npm install -g grunt-cli
 
   # Install php-build
