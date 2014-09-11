@@ -21,7 +21,7 @@ script : |
 
   # Add repository that contains php packages
   sudo add-apt-repository ppa:ondrej/php5 -y
-  sudo add-apt-repository ppa:ondrej/ruby -y
+  sudo add-apt-repository ppa:chris-lea/node.js -y
   sudo apt-get update
 
   # Needed to build PHP with php-build
@@ -31,6 +31,8 @@ script : |
   sudo apt-get install flex
   sudo apt-get install bison
   sudo apt-get install nodejs
+  
+  sudo npm install -g grunt-cli
 
   # Install php-build
   git clone https://github.com/CHH/php-build.git
